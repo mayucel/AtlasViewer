@@ -12,6 +12,7 @@ if ~isempty(dataTree.currElem) && ~dataTree.currElem.IsEmpty()
     hbconc.tHRF      = dataTree.currElem.GetTHRF();
     
     %% hacked
+    if ~isempty(dataTree.currElem.procStream.output.misc) == 1
     thbo = dataTree.currElem.procStream.output.misc.hmrstats.tval_contrast(:,:,1);
     thbr = dataTree.currElem.procStream.output.misc.hmrstats.tval_contrast(:,:,2);
     a(:,1,:,1)=thbo;
@@ -22,6 +23,7 @@ if ~isempty(dataTree.currElem) && ~dataTree.currElem.IsEmpty()
     aaa = repmat(aa,size(hbconc.tHRF,1),1);
     aaa = reshape(aaa, size(aaa,1), size(a,2),size(a,3),size(a,4));
     hbconc.HbConcRaw = aaa;
+    end
     %%
     
 end

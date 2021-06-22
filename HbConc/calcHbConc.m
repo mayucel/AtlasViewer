@@ -75,7 +75,7 @@ hbconc.HbO = interpHbConc(hbconc.mesh.vertices,  hbconc.HbConcRaw(startIdx:endId
 hbconc.HbR = interpHbConc(hbconc.mesh.vertices,  hbconc.HbConcRaw(startIdx:endIdx, 2, :, iCond),  probe.ptsProj_cortex,  iCh);
 
 % hacked
-tmap_threshold = 3;  %  t ~= 3 corresponds to p ~= 0.001 
+tmap_threshold = 5;  %  t ~= 3 corresponds to p ~= 0.001 
 hbconc.HbO(find(hbconc.HbO >= -tmap_threshold & hbconc.HbO < tmap_threshold))=0;
 hbconc.HbR(find(hbconc.HbR >= -tmap_threshold & hbconc.HbR < tmap_threshold))=0;
 % end
